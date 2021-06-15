@@ -1,4 +1,4 @@
-name: "kubectl"
+name: "LiveSafe kubectl"
 description: "Interacts with kubernetes clusters calling kubectl commands. Integrates support for AWS EKS."
 branding:
   icon: 'anchor'  

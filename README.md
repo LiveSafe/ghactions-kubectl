@@ -48,7 +48,7 @@ jobs:
           aws-region: us-east-1
 
       - name: Trigger deploy
-        uses: Consensys/kubernetes-action@master
+        uses: "LiveSafe/ghactions-kubectl@main"
         env:
           KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
         with:
