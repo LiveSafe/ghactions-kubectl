@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Trigger deploy
-        uses: Consensys/kubernetes-action@master
+        uses: "LiveSafe/ghactions-kubectl@main" 
         env:
           KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
         with:
