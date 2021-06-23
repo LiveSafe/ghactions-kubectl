@@ -9,6 +9,7 @@ if [ "$3" != "" ]; then
 fi
 
 ls -ltra
+pwd
 
 result="$(kubectl $namespace_arg $1 -f $2)"
 
