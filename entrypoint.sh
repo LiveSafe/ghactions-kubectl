@@ -3,9 +3,9 @@
 echo ${KUBE_CONFIG_DATA} | base64 -d > kubeconfig
 export KUBECONFIG=kubeconfig
 
-export namespace_arg = ""
+export namespace_arg=""
 if [ "$3" == "" ]; then
-    export namespace_arg = "-n $3"
+    export namespace_arg="-n $3"
 fi
 
 result="$(kubectl $namespace_arg $1 -f $2)"
