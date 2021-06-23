@@ -8,6 +8,8 @@ if [ "$3" != "" ]; then
     export namespace_arg="-n $3"
 fi
 
+ls -ltra
+
 result="$(kubectl $namespace_arg $1 -f $2)"
 
 status=$?
