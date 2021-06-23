@@ -9,9 +9,10 @@ if [ "$3" == "" ]; then
 fi
 
 echo "$@"
-echo "namespace = $namespace_arg"
+echo "namespace_arg = $namespace_arg"
 echo "command = $1"
 echo "file = $2"
+echo "namespace = \"${3}\""
 
 result="$(kubectl $namespace_arg $1 -f $2)"
 
