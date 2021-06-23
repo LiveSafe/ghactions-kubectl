@@ -4,14 +4,13 @@ branding:
   icon: 'anchor'
   color: 'blue'
 inputs:
-  args:
-    description: "Arguments passed to the kubectl command"
+  command:
+    description: "Command passed to kubectl"
     required: true
     default: 'apply'
   manifest:
-    description: 'Path to the Kubernetes manifest. Can be a file or a directory'
-    required: false
-    default: 'k8s.yml'
+    description: 'Path to the Kubernetes manifest file'
+    required: true
   namespace:
     description: 'If present, the namespace scope for this action. If not specified, it will use the current context'
     required: false
@@ -23,6 +22,6 @@ runs:
   using: "docker"
   image: "Dockerfile"
   args:
-    - ${{ inputs.args }}
+    - ${{ inputs.command }}
     - ${{ inputs.manifest }}
     - ${{ inputs.namespace }}

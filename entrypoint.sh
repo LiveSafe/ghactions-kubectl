@@ -8,6 +8,11 @@ if [ "$3" == "" ]; then
     export namespace_arg="-n $3"
 fi
 
+echo "$@"
+echo "namespace = $namespace_arg"
+echo "command = $1"
+echo "file = $2"
+
 result="$(kubectl $namespace_arg $1 -f $2)"
 
 status=$?
