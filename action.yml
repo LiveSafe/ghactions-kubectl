@@ -14,7 +14,7 @@ inputs:
   namespace:
     description: 'If present, the namespace scope for this action. If not specified, it will use the current context'
     required: false
-    default: ''
+    default:
 outputs:
   result:
     description: "Output of the kubectl command"
