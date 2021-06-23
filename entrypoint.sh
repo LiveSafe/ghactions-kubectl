@@ -4,7 +4,7 @@ echo ${KUBE_CONFIG_DATA} | base64 -d > kubeconfig
 export KUBECONFIG=kubeconfig
 
 export namespace_arg=""
-if [ "$3" == "" ]; then
+if [ "$3" != "" ]; then
     export namespace_arg="-n $3"
 fi
 
