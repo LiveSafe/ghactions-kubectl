@@ -1,12 +1,21 @@
-name: "LiveSafe kubectl"
-description: "Interacts with kubernetes clusters calling kubectl commands. Integrates support for AWS EKS."
+name: "LiveSafe kubectl apply"
+description: "Interacts with kubernetes clusters or removing kubectl resources. Integrates support for AWS EKS."
 branding:
-  icon: 'anchor'  
+  icon: 'anchor'
   color: 'blue'
 inputs:
   args:
     description: "Arguments passed to the kubectl command"
     required: true
+    default: 'apply'
+  manifest:
+    description: 'Path to the Kubernetes manifest. Can be a file or a directory'
+    required: false
+    default: 'k8s.yml'
+  namespace:
+    description: 'If present, the namespace scope for this action. If not specified, it will use the current context'
+    required: false
+    default: ''
 outputs:
   result:
     description: "Output of the kubectl command"
@@ -15,3 +24,5 @@ runs:
   image: "Dockerfile"
   args:
     - ${{ inputs.args }}
+    - ${{ inputs.manifest }}
+    - ${{ inputs.namespace }}
